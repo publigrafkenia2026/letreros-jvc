@@ -1,143 +1,97 @@
-<!DOCTYPE html>   
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Letreros JVC - Letreros Luminosos Profesionales</title>
-    <!-- Iconos FontAwesome para los botones de Redes -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
-        /* ESTILOS GLOBALES - ACABADO PREMIUM OSCURO */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #0b0c10; color: #fff; overflow-x: hidden; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #0a0b0d; color: #fff; overflow-x: hidden; }
         
-        /* MENÚ DE NAVEGACIÓN Y DESPLEGABLE */
-        header { background: rgba(11, 12, 16, 0.95); position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; border-bottom: 2px solid #1f2833; }
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; max-width: 1200px; margin: auto; }
+        /* NAVBAR CORPORATIVA OPTIMIZADA */
+        header { background: rgba(10, 11, 13, 0.98); position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; border-bottom: 3px solid #c5a059; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 5%; max-width: 1300px; margin: auto; }
         
-        /* LOGO CON MOVIMIENTO PREMIUM (ANIMACIÓN NEÓN JVC) */
+        /* LOGO IMPACTANTE MAS GRANDE Y CON MOVIMIENTO */
         .logo-box { display: flex; align-items: center; gap: 15px; cursor: pointer; }
-        .logo-img { width: 60px; height: auto; animation: neonGlowJVC 3s infinite ease-in-out; }
-        .logo-text { font-size: 24px; font-weight: bold; color: #66fcf1; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 10px #66fcf1; }
+        .logo-img { width: 110px; height: auto; transition: 0.3s; animation: neonGlowPremium 2.5s infinite ease-in-out; }
+        .logo-text { font-size: 28px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
+        .logo-text span { color: #c5a059; text-shadow: 0 0 10px rgba(197,160,89,0.5); }
         
-        @keyframes neonGlowJVC {
-            0%, 100% {
-                filter: drop-shadow(0 0 2px rgba(255, 170, 0, 0.6)) 
-                        drop-shadow(0 0 5px rgba(255, 170, 0, 0.4));
-                transform: scale(1);
-            }
-            45% {
-                filter: drop-shadow(0 0 4px rgba(255, 170, 0, 0.7)) 
-                        drop-shadow(0 0 12px rgba(255, 170, 0, 0.5));
-            }
-            50% {
-                /* Efecto de encendido de neón realista */
-                filter: drop-shadow(0 0 15px rgba(255, 170, 0, 0.9)) 
-                        drop-shadow(0 0 30px rgba(255, 170, 0, 0.7));
-                transform: scale(1.04);
-            }
-            55% {
-                filter: drop-shadow(0 0 3px rgba(255, 170, 0, 0.6));
-            }
-            60% {
-                filter: drop-shadow(0 0 18px rgba(255, 170, 0, 0.9)) 
-                        drop-shadow(0 0 35px rgba(255, 170, 0, 0.8));
-                transform: scale(1.04);
-            }
+        @keyframes neonGlowPremium {
+            0%, 100% { filter: drop-shadow(0 0 4px rgba(255, 180, 0, 0.5)); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 25px rgba(255, 180, 0, 0.95)) drop-shadow(0 0 40px rgba(255,180,0,0.6)); transform: scale(1.05); }
         }
 
-        .nav-menu { display: flex; list-style: none; gap: 20px; align-items: center; }
-        .nav-menu a { color: #c5a059; text-decoration: none; font-weight: 600; font-size: 16px; transition: 0.3s; }
-        .nav-menu a:hover { color: #66fcf1; text-shadow: 0 0 5px #66fcf1; }
+        .nav-menu { display: flex; list-style: none; gap: 25px; align-items: center; }
+        .nav-menu a { color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; transition: 0.3s; text-transform: uppercase; }
+        .nav-menu a:hover, .nav-menu .active-link { color: #c5a059; }
+        .btn-nav-wsap { background-color: #25d366; color: #fff !important; padding: 8px 16px; border-radius: 4px; display: flex; align-items: center; gap: 8px; }
 
-        /* MENÚ DESPLEGABLE DE PRODUCTOS */
-        .dropdown { position: relative; display: inline-block; }
-        .dropdown-content { display: none; position: absolute; background-color: #1f2833; min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.5); z-index: 1; border-radius: 4px; margin-top: 10px; }
-        .dropdown-content a { color: #fff; padding: 12px 16px; text-decoration: none; display: block; font-size: 15px; }
-        .dropdown-content a:hover { background-color: #45a29e; color: #0b0c10; }
-        .dropdown:hover .dropdown-content { display: block; }
-
-        /* SECCIÓN HERO - BANNER PRINCIPAL VENDEDOR */
-        .hero { height: 75vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; margin-top: 80px; background: linear-gradient(rgba(11,12,16,0.8), rgba(11,12,16,0.9)), url('https://unsplash.com') center/cover; }
-        .hero h1 { font-size: 48px; color: #fff; text-transform: uppercase; margin-bottom: 20px; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); }
-        .hero h1 span { color: #66fcf1; text-shadow: 0 0 15px #66fcf1; }
-        .hero p { font-size: 20px; color: #c5a059; max-width: 700px; margin-bottom: 30px; font-weight: 500; }
+        /* HERO AJUSTADO SIN SUPERPOSICION */
+        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; margin-top: 100px; background: linear-gradient(rgba(10,11,13,0.85), rgba(10,11,13,0.95)), url('https://unsplash.com') center/cover; }
+        .hero h1 { font-size: 52px; font-weight: 900; line-height: 1.2; text-transform: uppercase; margin-bottom: 25px; }
+        .hero h1 span { color: #c5a059; text-shadow: 0 0 15px rgba(197,160,89,0.3); }
+        .hero p { font-size: 19px; color: #a0a5b0; max-width: 800px; margin-bottom: 35px; line-height: 1.6; }
         
-        /* BOTÓN DE ACCIÓN REQUERIDA (COTIZADOR) */
-        .btn-premium { background-color: #66fcf1; color: #0b0c10; padding: 15px 35px; font-size: 18px; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; text-transform: uppercase; transition: 0.3s; box-shadow: 0 0 15px rgba(102,252,241,0.4); }
-        .btn-premium:hover { background-color: #45a29e; transform: translateY(-3px); box-shadow: 0 0 25px #66fcf1; }
+        .btn-premium { background: #c5a059; color: #0a0b0d; padding: 16px 40px; font-size: 16px; font-weight: 700; border: none; border-radius: 4px; cursor: pointer; text-transform: uppercase; transition: 0.3s; box-shadow: 0 4px 15px rgba(197,160,89,0.3); }
+        .btn-premium:hover { background: #e0b86f; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(197,160,89,0.5); }
 
-        /* CONTENEDOR VENDEDOR DE VIDEOS Y TRABAJOS */
-        .section-container { max-width: 1200px; margin: 60px auto; padding: 0 5%; text-align: center; }
-        .section-title { font-size: 32px; color: #66fcf1; text-transform: uppercase; margin-bottom: 40px; letter-spacing: 1px; }
+        /* SECCIONES Y CONTENEDORES */
+        .section-container { max-width: 1200px; margin: 80px auto; padding: 0 5%; text-align: center; }
+        .section-title { font-size: 36px; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; position: relative; padding-bottom: 15px; }
+        .section-title::after { content: ''; width: 60px; height: 3px; background: #c5a059; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+        .section-subtitle { color: #a0a5b0; font-size: 16px; margin-bottom: 50px; }
+
         .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .video-card { background: #1f2833; padding: 15px; border-radius: 8px; border: 1px solid #45a29e; transition: 0.3s; }
-        .video-card:hover { transform: translateY(-5px); box-shadow: 0 0 15px rgba(102,252,241,0.2); }
-        .video-card iframe { width: 100%; height: 200px; border-radius: 4px; border: none; }
-        .video-card h3 { font-size: 18px; margin-top: 15px; color: #c5a059; }
+        .video-card { background: #14161d; padding: 20px; border-radius: 6px; border: 1px solid #232733; transition: 0.3s; }
+        .video-card:hover { transform: translateY(-5px); border-color: #c5a059; }
+        .video-card iframe { width: 100%; height: 210px; border-radius: 4px; border: none; }
+        .video-card h3 { font-size: 18px; margin-top: 15px; color: #fff; font-weight: 600; }
 
-        /* FORMULARIO DE COTIZACIÓN DE IMPACTO */
-        .quote-form-box { background: #1f2833; max-width: 600px; margin: 50px auto; padding: 30px; border-radius: 8px; border: 2px solid #66fcf1; box-shadow: 0 0 20px rgba(102,252,241,0.1); }
-        .form-group { text-align: left; margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #66fcf1; }
-        .form-group input, .form-group select { width: 100%; padding: 12px; background: #0b0c10; border: 1px solid #45a29e; color: #fff; border-radius: 4px; font-size: 16px; }
-        .form-group input:focus, .form-group select:focus { border-color: #66fcf1; outline: none; }
-
-        /* INFOBAR - UBICACIÓN Y HORARIOS */
-        .info-section { background: #1f2833; padding: 40px 5%; border-top: 2px solid #45a29e; margin-top: 60px; }
-        .info-grid { display: flex; flex-wrap: wrap; justify-content: space-around; max-width: 1200px; margin: auto; gap: 30px; text-align: left; }
-        .info-item h4 { color: #66fcf1; font-size: 18px; margin-bottom: 10px; text-transform: uppercase; }
-        .info-item p { color: #c5a059; font-size: 16px; line-height: 1.6; }
+        /* UBICACION EN MAPA PROFESIONAL INTEGRADO */
+        .map-wrapper { display: flex; flex-wrap: wrap; gap: 30px; background: #14161d; border-radius: 8px; border: 1px solid #232733; overflow: hidden; text-align: left; }
+        .map-info { flex: 1; min-width: 300px; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+        .map-info h3 { font-size: 24px; color: #c5a059; margin-bottom: 20px; text-transform: uppercase; }
+        .map-info p { color: #a0a5b0; line-height: 1.8; margin-bottom: 15px; font-size: 16px; }
+        .map-info i { color: #c5a059; margin-right: 10px; width: 20px; }
+        .map-iframe { flex: 1.5; min-width: 300px; height: 400px; }
+        .map-iframe iframe { width: 100%; height: 100%; border: none; }
 
         /* BOTÓN FLOTANTE INTELIGENTE DE WHATSAPP */
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 32px; box-shadow: 2px 2px 10px rgba(0,0,0,0.5); z-index: 100; transition: 0.3s; text-decoration: none; }
-        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; box-shadow: 0 0 20px #25d366; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 32px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); z-index: 100; transition: 0.3s; text-decoration: none; }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
 
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 768px) {
-            .nav-menu { display: none; }
-            .hero h1 { font-size: 32px; }
-            .hero p { font-size: 16px; }
-        }
+        footer { background: #0a0b0d; padding: 30px 5%; text-align: center; border-top: 1px solid #232733; color: #606570; font-size: 14px; }
     </style>
 </head>
 <body>
 
-    <!-- MENÚ DE NAVEGACIÓN SUPERIOR -->
     <header>
         <div class="navbar">
             <div class="logo-box" onclick="location.href='#'">
-                <!-- Enlace al logo subido en tu GitHub -->
-                <img src="logo.png" alt="Logo JVC" class="logo-img" id="web-logo">
-                <span class="logo-text">Letreros JVC</span>
+                <img src="logo.png" alt="Logo JVC" class="logo-img">
+                <span class="logo-text">Letreros <span>JVC</span></span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#">Inicio</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Nuestros Letreros <i class="fa fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="#trabajos">Letreros Acrílicos</a>
-                        <a href="#trabajos">Letreros en MDF</a>
-                        <a href="#trabajos">Letreros Neón LED</a>
-                        <a href="#trabajos">Cajas Luminosas</a>
-                    </div>
-                </li>
-                <li><a href="#cotizar">Cotización Inmediata</a></li>
+                <li><a href="#" class="active-link">Inicio</a></li>
+                <li><a href="#trabajos">Trabajos</a></li>
                 <li><a href="#contacto">Ubicación</a></li>
+                <li><a href="https://wa.me." class="btn-nav-wsap" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- BANNER COMERCIAL PRINCIPAL -->
     <section class="hero">
-        <h1>Fabricación de <span>Letreros Luminosos</span> de Alto Impacto</h1>
-        <p>Hacemos brillar la identidad de tu negocio en todo Lima. Diseños personalizados en Acrílico, MDF y Neón con acabados estructurales de primera calidad y alta durabilidad.</p>
-        <button class="btn-premium" onclick="document.getElementById('cotizar').scrollIntoView({behavior: 'smooth'});">Cotizar Mi Letrero Ahora</button>
+        <h1>Fabricación de <br><span>Letreros Luminosos</span> de Alto Impacto</h1>
+        <p>Hacemos brillar la identidad de tu negocio en todo Lima. Diseños corporativos personalizados en Acrílico, MDF y Neón con acabados estructurales de primera calidad y alta durabilidad.</p>
+        <button class="btn-premium" onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'});">Contactar con el Taller</button>
     </section>
 
-    <!-- GALERÍA DE TRABAJOS EN VIDEO (YOUTUBE) -->
     <section class="section-container" id="trabajos">
         <h2 class="section-title">Nuestros Trabajos en Acción</h2>
+        <p class="section-subtitle">Proyectos reales fabricados con precisión industrial para nuestros clientes de Lima.</p>
         <div class="video-grid">
             <div class="video-card">
                 <iframe src="https://youtube.com" allowfullscreen></iframe>
@@ -158,5 +112,33 @@
         </div>
     </section>
 
-    <!-- FORMULARIO DE COTIZACIÓN INTEGRADO A WHATSAPP DIRECTO -->
-    <section class="section-container" id="cotizar">
+    <!-- SECCIÓN UBICACIÓN CON MAPA GOOGLE MAPS REAL DE CENTRO LIMA -->
+    <section class="section-container" id="contacto">
+        <h2 class="section-title">Ubicación Estratégica</h2>
+        <p class="section-subtitle">Visítanos en nuestra planta principal en el corazón comercial de Lima Centro.</p>
+        
+        <div class="map-wrapper">
+            <div class="map-info">
+                <h3>Letreros JVC</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Bolivia 148, Stand 272-F<br>Centro Comercial Centro Lima<br>Cercado de Lima, Perú</p>
+                <p><i class="fab fa-whatsapp"></i> 980 700 597</p>
+                <p><i class="fas fa-envelope"></i> ventaspubligrafkenia@gmail.com</p>
+                <p><i class="fas fa-clock"></i> Lunes a Sábado: 9:00 AM - 8:00 PM</p>
+            </div>
+            <div class="map-iframe">
+                <!-- Enlace embebido real de Google Maps apuntando a Av. Bolivia 148 -->
+                <iframe src="https://google.com" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Letreros JVC - Calidad Industrial Directa de Taller. Todos los derechos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
