@@ -17,23 +17,34 @@
         nav a { color: var(--text); text-decoration: none; margin-left: 25px; transition: 0.3s; }
         nav a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
 
-        .hero { padding: 180px 5% 100px; display: flex; flex-direction: column; align-items: center; text-align: center; background: linear-gradient(180deg, rgba(10,10,18,0.4) 0%, rgba(10,10,18,1) 100%), url('luminoso1jpg.jpg') no-repeat center center/cover; min-height: 70vh; justify-content: center; }
+        .hero { padding: 180px 5% 100px; display: flex; flex-direction: column; align-items: center; text-align: center; background: linear-gradient(180deg, rgba(10,10,18,0.4) 0%, rgba(10,10,18,1) 100%), url('luminoso1jpg.jpg') no-repeat center center/cover; min-height: 65vh; justify-content: center; }
         .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 20px; }
         .hero h1 span { color: var(--primary); text-shadow: 0 0 20px rgba(0, 240, 255, 0.6); }
         .hero p { font-size: 1.1rem; max-width: 700px; margin-bottom: 35px; color: #b0b0d0; }
         .btn-principal { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 15px rgba(0, 240, 255, 0.4); transition: 0.4s; display: inline-block; }
         .btn-principal:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(255, 0, 127, 0.7); }
 
-        .seccion { padding: 60px 5%; }
+        .seccion { padding: 70px 5%; }
         .titulo-seccion { font-size: 2.2rem; text-align: center; margin-bottom: 40px; }
         .titulo-seccion::after { content: ''; display: block; width: 60px; height: 4px; background: var(--secondary); margin: 10px auto 0; box-shadow: 0 0 10px var(--secondary); }
-        .grid-proyectos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        
+        /* SECCIÓN CORPORATIVA (MISIÓN Y VISIÓN) */
+        .mv-container { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
+        .mv-box { background-color: var(--card-bg); padding: 35px; border-radius: 15px; border: 1px solid rgba(0, 240, 255, 0.1); transition: 0.3s; }
+        .mv-box:hover { border-color: var(--secondary); box-shadow: 0 0 15px rgba(255, 0, 127, 0.2); }
+        .mv-box h3 { color: var(--primary); font-size: 1.5rem; margin-bottom: 15px; display: flex; align-items: center; }
+        .mv-box h3 i { margin-right: 10px; }
+        .mv-box p { color: #b0b0d0; line-height: 1.6; }
+
+        /* MULTIMEDIA / GALERÍA */
+        .grid-proyectos { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
         .tarjeta-proyecto { background-color: var(--card-bg); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
         .tarjeta-proyecto:hover { transform: translateY(-5px); border-color: var(--primary); }
-        .img-wrapper { width: 100%; height: 250px; overflow: hidden; background-color: #1a1a3a; }
+        .img-wrapper { width: 100%; height: 240px; overflow: hidden; background-color: #1a1a3a; }
         .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
-        .info-proyecto { padding: 20px; }
-        .info-proyecto h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--primary); }
+        .info-proyecto { padding: 15px; }
+        .info-proyecto h3 { font-size: 1.1rem; margin-bottom: 5px; color: var(--primary); }
+        .info-proyecto p { font-size: 0.9rem; color: #b0b0d0; }
 
         .contacto-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
         .info-contacto p { font-size: 1.1rem; margin-bottom: 15px; color: #b0b0d0; }
@@ -44,7 +55,7 @@
         @keyframes pulseWa { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
         
         footer { background-color: #05050b; text-align: center; padding: 25px; font-size: 0.9rem; color: #606080; margin-top: 40px; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } .contacto-container { grid-template-columns: 1fr; } nav { display: none; } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } .contacto-container { grid-template-columns: 1fr; } .mv-container { grid-template-columns: 1fr; } nav { display: none; } }
     </style>
 </head>
 <body>
@@ -55,6 +66,7 @@
         </div>
         <nav>
             <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
             <a href="#proyectos">Galería</a>
             <a href="#ubicacion">Ubicación</a>
         </nav>
@@ -68,76 +80,56 @@
         </a>
     </section>
 
+    <!-- SECCIÓN NUEVA: MISIÓN Y VISIÓN CORPORATIVA -->
+    <section class="seccion" id="nosotros" style="background-color: #0d0d1a;">
+        <h2 class="titulo-seccion">Nuestra Identidad Corporativa</h2>
+        <div class="mv-container">
+            <div class="mv-box">
+                <h3><i class="fas fa-bullseye"></i> Nuestra Misión</h3>
+                <p>Ofrecer soluciones integrales en publicidad visual y letreros luminosos de alta gama, superando las expectativas de nuestros clientes mediante el uso de materiales de primera calidad, innovación constante y un servicio directo de taller que garantiza el mejor valor económico corporativo de Lima.</p>
+            </div>
+            <div class="mv-box">
+                <h3><i class="fas fa-eye"></i> Nuestra Visión</h3>
+                <p>Consolidarnos como la empresa líder en la fabricación de letreros acrílicos, estructuras de neón y acabados en MDF en todo Lima Centro, siendo reconocidos por nuestra absoluta puntualidad en las entregas, la impecable definición de nuestros acabados y el desarrollo tecnológico en letreros publicitarios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN GALERÍA CON TODAS TUS FOTOS FILTRADAS -->
     <section class="seccion" id="proyectos">
-        <h2 class="titulo-seccion">Nuestros Trabajos Realizados</h2>
+        <h2 class="titulo-seccion">Catálogo de Trabajos Realizados</h2>
         <div class="grid-proyectos">
             
+            <!-- Bloque Acrílicos -->
             <div class="tarjeta-proyecto">
-                <div class="img-wrapper">
-                    <img src="acrilico1jpg.jpg" alt="Letrero Acrílico Corporativo">
-                </div>
-                <div class="info-proyecto">
-                    <h3>Letrero Acrílico 3D</h3>
-                    <p>Acabado elegante en alto relieve con iluminación LED interna para fachadas comerciales.</p>
-                </div>
+                <div class="img-wrapper"><img src="acrilico1jpg.jpg" alt="Acrílico 1"></div>
+                <div class="info-proyecto"><h3>Letrero Acrílico 3D</h3><p>Fabricación corporativa en alto relieve.</p></div>
             </div>
-
             <div class="tarjeta-proyecto">
-                <div class="img-wrapper">
-                    <img src="luminoso1jpg.jpg" alt="Caja Luminosa Publicitaria">
-                </div>
-                <div class="info-proyecto">
-                    <h3>Cajas Luminosas</h3>
-                    <p>Máxima visibilidad diurna y nocturna para locales de alto tráfico.</p>
-                </div>
+                <div class="img-wrapper"><img src="acrilico2jpg.jpg" alt="Acrílico 2"></div>
+                <div class="info-proyecto"><h3>Letras Block Acrílicas</h3><p>Acabado premium de alta visibilidad.</p></div>
             </div>
-
             <div class="tarjeta-proyecto">
-                <div class="img-wrapper">
-                    <img src="mdfjpg.jpg" alt="Letras en MDF para Eventos">
-                </div>
-                <div class="info-proyecto">
-                    <h3>Letras en MDF Caladas</h3>
-                    <p>Diseños personalizados ideales para eventos corporativos y decoración de interiores.</p>
-                </div>
+                <div class="img-wrapper"><img src="acrilico3jpg.jpg" alt="Acrílico 3"></div>
+                <div class="info-proyecto"><h3>Logotipo en Acrílico</h3><p>Diseño corporativo retroiluminado.</p></div>
             </div>
-
             <div class="tarjeta-proyecto">
-                <div class="img-wrapper">
-                    <img src="acrilico2jpg.jpg" alt="Diseño Acrílico Especial">
-                </div>
-                <div class="info-proyecto">
-                    <h3>Letras Block Neón</h3>
-                    <p>Combinación moderna de bases acrílicas con perfiles luminosos de alta intensidad.</p>
-                </div>
+                <div class="img-wrapper"><img src="acrilico4jpg.jpg" alt="Acrílico 4"></div>
+                <div class="info-proyecto"><h3>Fachada Acrílica</h3><p>Instalación en locales comerciales.</p></div>
+            </div>
+            <div class="tarjeta-proyecto">
+                <div class="img-wrapper"><img src="acrilico5jpg.jpg" alt="Acrílico 5"></div>
+                <div class="info-proyecto"><h3>Letrero Especial 3D</h3><p>Corte preciso y ensamble impecable.</p></div>
             </div>
 
-        </div>
-    </section>
-
-    <section class="seccion" id="ubicacion" style="background-color: #0d0d1a;">
-        <h2 class="titulo-seccion">Visítanos en Nuestro Taller</h2>
-        <div class="contacto-container">
-            <div class="info-contacto">
-                <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--primary);">Atención Directa de Fábrica</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Av. Bolivia 148, Stand 272-F<br>C.C. Centro Lima, Lima, Perú</p>
-                <p><i class="fas fa-phone-alt"></i> +51 980 700 597</p>
-                <p><i class="fas fa-clock"></i> Lunes a Sábado - Horario Comercial</p>
+            <!-- Bloque Luminosos -->
+            <div class="tarjeta-proyecto">
+                <div class="img-wrapper"><img src="luminoso1jpg.jpg" alt="Luminoso 1"></div>
+                <div class="info-proyecto"><h3>Caja Luminosa</h3><p>Estructura metálica con iluminación LED uniforme.</p></div>
             </div>
-            <div class="mapa-wrapper">
-                <!-- Mapa real exacto de la ubicación en el Centro de Lima -->
-                <iframe src="https://google.com" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="tarjeta-proyecto">
+                <div class="img-wrapper"><img src="luminoso2jpg.jpg" alt="Luminoso 2"></div>
+                <div class="info-proyecto"><h3>Panel Luminoso Publicitario</h3><p>Ideal para captar clientes en la noche.</p></div>
             </div>
-        </div>
-    </section>
-
-    <a href="https://wa.me" class="btn-whatsapp-flotante" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <footer>
-        <p>&copy; 2026 Letreros JVC - Fabricación de Letreros Luminosos y Publicidad. Lima, Perú.</p>
-    </footer>
-
-</body>
-</html>
+            <div class="tarjeta-proyecto">
+                <div class="img-wrapper"><img src="luminoso3jpg.jpg" alt="Luminoso 3"></div>
