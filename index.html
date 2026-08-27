@@ -1,135 +1,2394 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Letreros JVC | Letreros Luminosos y Acrílicos en Lima</title>
-    <link href="https://googleapis.com" rel="stylesheet">
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <style>
-        :root { --primary: #00f0ff; --secondary: #ff007f; --dark: #0a0a12; --card-bg: #121225; --text: #ffffff; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--dark); color: var(--text); overflow-x: hidden; }
-        
-        header { background: rgba(10, 10, 18, 0.95); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 2px solid rgba(0, 240, 255, 0.2); backdrop-filter: blur(10px); }
-        .logo-img { height: 60px; animation: neonPulse 2s infinite alternate ease-in-out; filter: drop-shadow(0 0 5px var(--primary)); }
-        @keyframes neonPulse { 0% { transform: scale(1); filter: drop-shadow(0 0 5px var(--primary)); } 100% { transform: scale(1.03); filter: drop-shadow(0 0 15px var(--secondary)); } }
-        nav a { color: var(--text); text-decoration: none; margin-left: 25px; transition: 0.3s; }
-        nav a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .hero { padding: 180px 5% 100px; display: flex; flex-direction: column; align-items: center; text-align: center; background: linear-gradient(180deg, rgba(10,10,18,0.4) 0%, rgba(10,10,18,1) 100%), url('luminoso1jpg.jpg') no-repeat center center/cover; min-height: 65vh; justify-content: center; }
-        .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 20px; }
-        .hero h1 span { color: var(--primary); text-shadow: 0 0 20px rgba(0, 240, 255, 0.6); }
-        .hero p { font-size: 1.1rem; max-width: 700px; margin-bottom: 35px; color: #b0b0d0; }
-        .btn-principal { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 15px rgba(0, 240, 255, 0.4); transition: 0.4s; display: inline-block; }
-        .btn-principal:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(255, 0, 127, 0.7); }
+  <title>Letreros JVC | Letreros Luminosos, Acrílicos y Letras 3D en Lima</title>
 
-        .seccion { padding: 70px 5%; }
-        .titulo-seccion { font-size: 2.2rem; text-align: center; margin-bottom: 40px; }
-        .titulo-seccion::after { content: ''; display: block; width: 60px; height: 4px; background: var(--secondary); margin: 10px auto 0; box-shadow: 0 0 10px var(--secondary); }
-        
-        /* SECCIÓN CORPORATIVA (MISIÓN Y VISIÓN) */
-        .mv-container { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
-        .mv-box { background-color: var(--card-bg); padding: 35px; border-radius: 15px; border: 1px solid rgba(0, 240, 255, 0.1); transition: 0.3s; }
-        .mv-box:hover { border-color: var(--secondary); box-shadow: 0 0 15px rgba(255, 0, 127, 0.2); }
-        .mv-box h3 { color: var(--primary); font-size: 1.5rem; margin-bottom: 15px; display: flex; align-items: center; }
-        .mv-box h3 i { margin-right: 10px; }
-        .mv-box p { color: #b0b0d0; line-height: 1.6; }
+  <meta name="description"
+        content="Letreros JVC - Fabricación de letreros luminosos, letras 3D, acrílicos, fachadas y soluciones publicitarias en Lima, Perú. Solicita tu cotización por WhatsApp.">
 
-        /* MULTIMEDIA / GALERÍA */
-        .grid-proyectos { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-        .tarjeta-proyecto { background-color: var(--card-bg); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
-        .tarjeta-proyecto:hover { transform: translateY(-5px); border-color: var(--primary); }
-        .img-wrapper { width: 100%; height: 240px; overflow: hidden; background-color: #1a1a3a; }
-        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
-        .info-proyecto { padding: 15px; }
-        .info-proyecto h3 { font-size: 1.1rem; margin-bottom: 5px; color: var(--primary); }
-        .info-proyecto p { font-size: 0.9rem; color: #b0b0d0; }
+  <meta name="theme-color" content="#090b14">
 
-        .contacto-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        .info-contacto p { font-size: 1.1rem; margin-bottom: 15px; color: #b0b0d0; }
-        .info-contacto i { color: var(--primary); margin-right: 12px; width: 25px; }
-        .mapa-wrapper { border-radius: 15px; overflow: hidden; border: 2px solid rgba(0, 240, 255, 0.3); height: 350px; }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        .btn-whatsapp-flotante { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50px; display: flex; justify-content: center; align-items: center; font-size: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000; animation: pulseWa 2s infinite; text-decoration: none; }
-        @keyframes pulseWa { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
-        
-        footer { background-color: #05050b; text-align: center; padding: 25px; font-size: 0.9rem; color: #606080; margin-top: 40px; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } .contacto-container { grid-template-columns: 1fr; } .mv-container { grid-template-columns: 1fr; } nav { display: none; } }
-    </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+  <style>
+
+    /* =====================================================
+       VARIABLES
+    ===================================================== */
+
+    :root {
+      --bg: #070912;
+      --bg-2: #0d1020;
+      --card: #111528;
+      --card-2: #151a32;
+
+      --text: #ffffff;
+      --text-soft: #aeb5c9;
+
+      --cyan: #00e5ff;
+      --cyan-2: #00bcd4;
+
+      --pink: #ff007f;
+      --purple: #7c3cff;
+
+      --border: rgba(255,255,255,.10);
+
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+
+      --radius: 18px;
+    }
+
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+
+    /* =====================================================
+       UTILIDADES
+    ===================================================== */
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title span {
+      display: inline-block;
+      color: var(--cyan);
+      font-size: .85rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+    }
+
+    .section-title p {
+      max-width: 680px;
+      margin: 18px auto 0;
+      color: var(--text-soft);
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      background: rgba(7,9,18,.78);
+      backdrop-filter: blur(15px);
+
+      border-bottom: 1px solid rgba(0,229,255,.12);
+    }
+
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 90px;
+      height: 68px;
+      object-fit: contain;
+
+      filter:
+        drop-shadow(0 0 12px rgba(255,0,127,.25))
+        drop-shadow(0 0 10px rgba(0,229,255,.15));
+
+      animation: logoGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes logoGlow {
+      0%,100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.04);
+      }
+    }
+
+    .brand-text {
+      display: none;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .menu a {
+      color: #dce0ec;
+      font-size: .95rem;
+      transition: .25s;
+    }
+
+    .menu a:hover {
+      color: var(--cyan);
+    }
+
+    .menu-cta {
+      padding: 11px 18px;
+      border-radius: 10px;
+
+      background: linear-gradient(
+        135deg,
+        var(--cyan),
+        #008cff
+      );
+
+      color: #001018 !important;
+      font-weight: 800;
+    }
+
+    .menu-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,229,255,.25);
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+      min-height: 100vh;
+      padding-top: 82px;
+
+      display: flex;
+      align-items: center;
+
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 20% 30%,
+          rgba(0,229,255,.13),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(255,0,127,.12),
+          transparent 30%
+        ),
+        var(--bg);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+
+      background: rgba(124,60,255,.10);
+
+      filter: blur(100px);
+      border-radius: 50%;
+
+      right: -200px;
+      bottom: -200px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 8px 14px;
+      border: 1px solid rgba(0,229,255,.25);
+      border-radius: 999px;
+
+      background: rgba(0,229,255,.05);
+
+      color: var(--cyan);
+      font-size: .8rem;
+      font-weight: 700;
+
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5.3rem);
+      line-height: 1.02;
+
+      letter-spacing: -2px;
+
+      margin-bottom: 25px;
+    }
+
+    .hero h1 strong {
+      color: var(--cyan);
+    }
+
+    .hero-description {
+      color: var(--text-soft);
+      font-size: 1.08rem;
+      max-width: 600px;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding: 15px 23px;
+
+      border-radius: 11px;
+
+      font-weight: 800;
+      font-size: .95rem;
+
+      transition: .3s;
+
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(
+        135deg,
+        var(--cyan),
+        #008cff
+      );
+
+      color: #001018;
+
+      box-shadow: 0 12px 35px rgba(0,229,255,.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 45px rgba(0,229,255,.28);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.18);
+      color: white;
+      background: rgba(255,255,255,.03);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+
+
+    /* HERO IMAGE */
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-image {
+      position: relative;
+
+      border-radius: 25px;
+      overflow: hidden;
+
+      border: 1px solid rgba(255,255,255,.12);
+
+      box-shadow: var(--shadow);
+
+      background: var(--card);
+    }
+
+    .hero-image img {
+      width: 100%;
+      min-height: 470px;
+      object-fit: cover;
+
+      transition: transform 1s ease;
+    }
+
+    .hero-image:hover img {
+      transform: scale(1.04);
+    }
+
+    .hero-image::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent 50%,
+          rgba(0,0,0,.7)
+        );
+    }
+
+    .hero-label {
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+      right: 25px;
+
+      z-index: 3;
+    }
+
+    .hero-label small {
+      color: var(--cyan);
+      font-weight: 800;
+    }
+
+    .hero-label h3 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.5rem;
+      margin-top: 4px;
+    }
+
+
+    /* =====================================================
+       SERVICIOS
+    ===================================================== */
+
+    .services {
+      background: var(--bg-2);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      padding: 30px;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.04),
+          rgba(255,255,255,.015)
+        );
+
+      transition: .3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(0,229,255,.35);
+
+      box-shadow: 0 20px 45px rgba(0,0,0,.25);
+    }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 14px;
+
+      background: rgba(0,229,255,.08);
+      border: 1px solid rgba(0,229,255,.15);
+
+      font-size: 1.5rem;
+
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--text-soft);
+      font-size: .93rem;
+    }
+
+
+    /* =====================================================
+       GALERÍA
+    ===================================================== */
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+
+      margin-bottom: 35px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+
+      color: #cdd2e0;
+
+      padding: 10px 17px;
+      border-radius: 999px;
+
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--cyan);
+      color: #001018;
+      border-color: var(--cyan);
+      font-weight: 800;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+
+      min-height: 290px;
+
+      border-radius: 18px;
+      overflow: hidden;
+
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      cursor: pointer;
+
+      transition: .35s;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0,229,255,.35);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+
+      transition: .5s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.07);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+
+      padding: 25px 20px 20px;
+
+      background:
+        linear-gradient(
+          transparent,
+          rgba(0,0,0,.9)
+        );
+    }
+
+    .gallery-overlay span {
+      color: var(--cyan);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .gallery-overlay h3 {
+      margin-top: 4px;
+      font-family: "Montserrat", sans-serif;
+    }
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .cta {
+      padding: 80px 0;
+    }
+
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+
+      border-radius: 28px;
+
+      padding: 70px 50px;
+
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at 20% 50%,
+          rgba(0,229,255,.18),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 80% 50%,
+          rgba(255,0,127,.16),
+          transparent 30%
+        ),
+        var(--card);
+
+      border: 1px solid var(--border);
+    }
+
+    .cta-box h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 15px;
+    }
+
+    .cta-box p {
+      color: var(--text-soft);
+      max-width: 650px;
+      margin: 0 auto 30px;
+    }
+
+
+    /* =====================================================
+       NOSOTROS
+    ===================================================== */
+
+    .about {
+      background: var(--bg-2);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-content h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(2rem,4vw,3rem);
+      margin-bottom: 20px;
+    }
+
+    .about-content h2 span {
+      color: var(--cyan);
+    }
+
+    .about-content p {
+      color: var(--text-soft);
+      margin-bottom: 18px;
+    }
+
+    .checks {
+      display: grid;
+      gap: 13px;
+      margin-top: 25px;
+    }
+
+    .check {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .check-icon {
+      width: 27px;
+      height: 27px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: rgba(0,229,255,.12);
+      color: var(--cyan);
+
+      font-weight: 900;
+    }
+
+    .about-card {
+      min-height: 400px;
+
+      display: flex;
+      align-items: flex-end;
+
+      padding: 30px;
+
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent 35%,
+          rgba(0,0,0,.85)
+        ),
+        url("luminoso2.jpg.jpg") center/cover;
+
+      border: 1px solid var(--border);
+
+      box-shadow: var(--shadow);
+    }
+
+    .about-card-content small {
+      color: var(--cyan);
+      font-weight: 800;
+    }
+
+    .about-card-content h3 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.7rem;
+      margin-top: 5px;
+    }
+
+
+    /* =====================================================
+       PROCESO
+    ===================================================== */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .process {
+      position: relative;
+
+      padding: 28px 22px;
+
+      border: 1px solid var(--border);
+      border-radius: 17px;
+
+      background: rgba(255,255,255,.025);
+    }
+
+    .process-number {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+
+      color: rgba(0,229,255,.25);
+
+      margin-bottom: 12px;
+    }
+
+    .process h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .process p {
+      color: var(--text-soft);
+      font-size: .9rem;
+    }
+
+
+    /* =====================================================
+       UBICACIÓN
+    ===================================================== */
+
+    .location {
+      background: var(--bg-2);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .location-info {
+      padding: 35px;
+
+      border-radius: 20px;
+
+      background: var(--card);
+
+      border: 1px solid var(--border);
+    }
+
+    .location-info h2 {
+      font-family: "Montserrat", sans-serif;
+      margin-bottom: 20px;
+    }
+
+    .location-item {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 22px;
+    }
+
+    .location-item .icon {
+      font-size: 1.35rem;
+    }
+
+    .location-item strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .location-item p {
+      color: var(--text-soft);
+      font-size: .92rem;
+    }
+
+    .map {
+      min-height: 430px;
+
+      border-radius: 20px;
+      overflow: hidden;
+
+      border: 1px solid var(--border);
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+
+      border: 0;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+      padding: 55px 0 25px;
+      background: #05060c;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: 50px;
+      padding-bottom: 40px;
+    }
+
+    .footer-brand img {
+      width: 110px;
+      margin-bottom: 15px;
+    }
+
+    .footer-brand p {
+      color: var(--text-soft);
+      max-width: 400px;
+      font-size: .9rem;
+    }
+
+    footer h3 {
+      margin-bottom: 17px;
+      font-size: 1rem;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: var(--text-soft);
+      font-size: .9rem;
+      transition: .2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    .copyright {
+      border-top: 1px solid var(--border);
+      padding-top: 22px;
+
+      color: #777e91;
+
+      text-align: center;
+      font-size: .8rem;
+    }
+
+
+    /* =====================================================
+       WHATSAPP
+    ===================================================== */
+
+    .whatsapp {
+      position: fixed;
+
+      right: 22px;
+      bottom: 22px;
+
+      z-index: 2000;
+    }
+
+    .whatsapp-button {
+      width: 62px;
+      height: 62px;
+
+      border-radius: 50%;
+
+      display: grid;
+      place-items: center;
+
+      background: #25d366;
+
+      color: white;
+
+      font-size: 1.8rem;
+
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+
+      cursor: pointer;
+
+      border: 0;
+
+      transition: .3s;
+    }
+
+    .whatsapp-button:hover {
+      transform: scale(1.08);
+    }
+
+    .whatsapp-box {
+      position: absolute;
+
+      right: 0;
+      bottom: 76px;
+
+      width: 285px;
+
+      padding: 20px;
+
+      background: #ffffff;
+      color: #161616;
+
+      border-radius: 17px;
+
+      box-shadow: 0 20px 50px rgba(0,0,0,.35);
+
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+
+      transition: .3s;
+    }
+
+    .whatsapp.open .whatsapp-box {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .whatsapp-box h3 {
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+
+    .whatsapp-box p {
+      font-size: .84rem;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .whatsapp-link {
+      display: block;
+
+      text-align: center;
+
+      padding: 11px;
+
+      background: #25d366;
+      color: white;
+
+      border-radius: 9px;
+
+      font-weight: 800;
+    }
+
+
+    /* =====================================================
+       MODAL GALERÍA
+    ===================================================== */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+
+      z-index: 3000;
+
+      background: rgba(0,0,0,.88);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 25px;
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition: .3s;
+    }
+
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal img {
+      max-width: 95vw;
+      max-height: 88vh;
+
+      object-fit: contain;
+
+      border-radius: 12px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+
+      width: 45px;
+      height: 45px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(255,255,255,.25);
+
+      background: rgba(255,255,255,.1);
+
+      color: white;
+
+      font-size: 1.5rem;
+
+      cursor: pointer;
+    }
+
+
+    /* =====================================================
+       ANIMACIÓN
+    ===================================================== */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+
+      transition:
+        opacity .7s ease,
+        transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media (max-width: 950px) {
+
+      .menu {
+        gap: 15px;
+      }
+
+      .menu a {
+        font-size: .82rem;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 120px;
+        padding-bottom: 70px;
+      }
+
+      .hero-image img {
+        min-height: 350px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+
+    @media (max-width: 650px) {
+
+      .nav {
+        height: 70px;
+      }
+
+      .brand img {
+        width: 72px;
+        height: 58px;
+      }
+
+      .menu {
+        gap: 12px;
+      }
+
+      .menu a:not(.menu-cta) {
+        display: none;
+      }
+
+      .menu-cta {
+        padding: 9px 12px;
+        font-size: .78rem !important;
+      }
+
+      .hero {
+        padding-top: 105px;
+      }
+
+      .hero h1 {
+        font-size: 2.7rem;
+        letter-spacing: -1px;
+      }
+
+      .hero-description {
+        font-size: .96rem;
+      }
+
+      .hero-image img {
+        min-height: 280px;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .services-grid,
+      .gallery,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item {
+        min-height: 300px;
+      }
+
+      .gallery-item img {
+        height: 300px;
+      }
+
+      .cta-box {
+        padding: 50px 25px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .location-grid {
+        gap: 20px;
+      }
+
+      .map,
+      .map iframe {
+        min-height: 350px;
+      }
+
+      .whatsapp {
+        right: 15px;
+        bottom: 15px;
+      }
+
+    }
+
+  </style>
 </head>
+
+
 <body>
 
-    <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="Letreros JVC" class="logo-img">
-        </div>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#proyectos">Galería</a>
-            <a href="#ubicacion">Ubicación</a>
-        </nav>
-    </header>
 
-    <section class="hero" id="inicio">
-        <h1>Letreros Luminosos de Alto Impacto para <span>Destacar tu Marca</span></h1>
-        <p>Fabricantes directos en Lima Centro. Diseñamos e instalamos letreros acrílicos, letras en MDF y neón LED de alta durabilidad.</p>
-        <a href="https://wa.me" class="btn-principal" target="_blank">
-            <i class="fab fa-whatsapp"></i> Cotizar por WhatsApp
+  <!-- ===================================================
+       HEADER
+  ==================================================== -->
+
+  <header>
+
+    <div class="container nav">
+
+      <a href="#inicio" class="brand">
+
+        <img src="logo.png" alt="Letreros JVC">
+
+      </a>
+
+
+      <nav class="menu">
+
+        <a href="#inicio">Inicio</a>
+
+        <a href="#servicios">Servicios</a>
+
+        <a href="#galeria">Trabajos</a>
+
+        <a href="#nosotros">Nosotros</a>
+
+        <a href="#ubicacion">Ubicación</a>
+
+        <a
+          class="menu-cta"
+          href="https://wa.me/51980700597?text=Hola%20Letreros%20JVC,%20quiero%20solicitar%20una%20cotización."
+          target="_blank">
+
+          Cotizar
+
         </a>
-    </section>
 
-    <!-- SECCIÓN NUEVA: MISIÓN Y VISIÓN CORPORATIVA -->
-    <section class="seccion" id="nosotros" style="background-color: #0d0d1a;">
-        <h2 class="titulo-seccion">Nuestra Identidad Corporativa</h2>
-        <div class="mv-container">
-            <div class="mv-box">
-                <h3><i class="fas fa-bullseye"></i> Nuestra Misión</h3>
-                <p>Ofrecer soluciones integrales en publicidad visual y letreros luminosos de alta gama, superando las expectativas de nuestros clientes mediante el uso de materiales de primera calidad, innovación constante y un servicio directo de taller que garantiza el mejor valor económico corporativo de Lima.</p>
-            </div>
-            <div class="mv-box">
-                <h3><i class="fas fa-eye"></i> Nuestra Visión</h3>
-                <p>Consolidarnos como la empresa líder en la fabricación de letreros acrílicos, estructuras de neón y acabados en MDF en todo Lima Centro, siendo reconocidos por nuestra absoluta puntualidad en las entregas, la impecable definición de nuestros acabados y el desarrollo tecnológico en letreros publicitarios.</p>
-            </div>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ===================================================
+       HERO
+  ==================================================== -->
+
+  <main id="inicio">
+
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+        <div class="hero-content reveal">
+
+          <div class="hero-badge">
+
+            ✦ SOLUCIONES PUBLICITARIAS EN LIMA
+
+          </div>
+
+
+          <h1>
+
+            Hacemos que
+
+            <strong>tu negocio</strong>
+
+            destaque.
+
+          </h1>
+
+
+          <p class="hero-description">
+
+            Diseñamos y fabricamos letreros luminosos,
+            letras 3D, acrílicos, fachadas y soluciones
+            publicitarias para darle presencia a tu marca.
+
+          </p>
+
+
+          <div class="hero-buttons">
+
+            <a
+              class="btn btn-primary"
+              href="https://wa.me/51980700597?text=Hola%20Letreros%20JVC,%20quiero%20cotizar%20un%20letrero."
+              target="_blank">
+
+              💬 Cotizar por WhatsApp
+
+            </a>
+
+
+            <a
+              class="btn btn-outline"
+              href="#galeria">
+
+              Ver nuestros trabajos →
+
+            </a>
+
+          </div>
+
         </div>
+
+
+
+        <div class="hero-visual reveal">
+
+          <div class="hero-image">
+
+            <!-- FOTO PRINCIPAL -->
+
+            <img
+              src="luminoso1.jpg.jpg"
+              alt="Trabajo de Letreros JVC"
+              onerror="this.style.display='none';">
+
+            <div class="hero-label">
+
+              <small>LETREROS JVC</small>
+
+              <h3>
+
+                Imagen que hace crecer tu negocio.
+
+              </h3>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
 
-    <!-- SECCIÓN GALERÍA CON TODAS TUS FOTOS FILTRADAS -->
-    <section class="seccion" id="proyectos">
-        <h2 class="titulo-seccion">Catálogo de Trabajos Realizados</h2>
-        <div class="grid-proyectos">
-            
-            <!-- Bloque Acrílicos -->
-            <div class="tarjeta-proyecto">
-                <div class="img-wrapper"><img src="acrilico1jpg.jpg" alt="Acrílico 1"></div>
-                <div class="info-proyecto"><h3>Letrero Acrílico 3D</h3><p>Fabricación corporativa en alto relieve.</p></div>
-            </div>
-            <div class="tarjeta-proyecto">
-                <div class="img-wrapper"><img src="acrilico2jpg.jpg" alt="Acrílico 2"></div>
-                <div class="info-proyecto"><h3>Letras Block Acrílicas</h3><p>Acabado premium de alta visibilidad.</p></div>
-            </div>
-            <div class="tarjeta-proyecto">
-                <div class="img-wrapper"><img src="acrilico3jpg.jpg" alt="Acrílico 3"></div>
-                <div class="info-proyecto"><h3>Logotipo en Acrílico</h3><p>Diseño corporativo retroiluminado.</p></div>
-            </div>
-            <div class="tarjeta-proyecto">
-                <div class="img-wrapper"><img src="acrilico4jpg.jpg" alt="Acrílico 4"></div>
-                <div class="info-proyecto"><h3>Fachada Acrílica</h3><p>Instalación en locales comerciales.</p></div>
-            </div>
-            <div class="tarjeta-proyecto">
-                <div class="img-wrapper"><img src="acrilico5jpg.jpg" alt="Acrílico 5"></div>
-                <div class="info-proyecto"><h3>Letrero Especial 3D</h3><p>Corte preciso y ensamble impecable.</p></div>
+
+
+    <!-- =================================================
+         SERVICIOS
+    ================================================== -->
+
+    <section class="section services" id="servicios">
+
+      <div class="container">
+
+        <div class="section-title reveal">
+
+          <span>Lo que hacemos</span>
+
+          <h2>Soluciones para hacer visible tu marca</h2>
+
+          <p>
+
+            Creamos piezas publicitarias pensadas
+            para destacar tu negocio y atraer miradas.
+
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+          <article class="service-card reveal">
+
+            <div class="service-icon">💡</div>
+
+            <h3>Letreros Luminosos</h3>
+
+            <p>
+
+              Letreros con iluminación para conseguir
+              mayor visibilidad durante el día y la noche.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="service-card reveal">
+
+            <div class="service-icon">✦</div>
+
+            <h3>Letras 3D</h3>
+
+            <p>
+
+              Letras corpóreas y diseños en relieve
+              para darle presencia y personalidad a tu marca.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="service-card reveal">
+
+            <div class="service-icon">◇</div>
+
+            <h3>Acrílicos</h3>
+
+            <p>
+
+              Logotipos, letras y piezas en acrílico
+              con acabados modernos y profesionales.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="service-card reveal">
+
+            <div class="service-icon">▣</div>
+
+            <h3>Cajas de Luz</h3>
+
+            <p>
+
+              Soluciones luminosas para interiores,
+              exteriores y fachadas comerciales.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="service-card reveal">
+
+            <div class="service-icon">⌂</div>
+
+            <h3>Fachadas Comerciales</h3>
+
+            <p>
+
+              Transformamos la fachada de tu negocio
+              para conseguir una imagen más atractiva.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="service-card reveal">
+
+            <div class="service-icon">✎</div>
+
+            <h3>Proyectos Personalizados</h3>
+
+            <p>
+
+              Cuéntanos tu idea y trabajamos una solución
+              adaptada a tu negocio y presupuesto.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         GALERÍA
+    ================================================== -->
+
+    <section class="section" id="galeria">
+
+      <div class="container">
+
+        <div class="section-title reveal">
+
+          <span>Portafolio</span>
+
+          <h2>Nuestros trabajos</h2>
+
+          <p>
+
+            Una selección de proyectos y trabajos realizados
+            por Letreros JVC.
+
+          </p>
+
+        </div>
+
+
+        <div class="filters">
+
+          <button class="filter-btn active" data-filter="all">
+
+            Todos
+
+          </button>
+
+          <button class="filter-btn" data-filter="acrilico">
+
+            Acrílicos
+
+          </button>
+
+          <button class="filter-btn" data-filter="luminoso">
+
+            Luminosos
+
+          </button>
+
+          <button class="filter-btn" data-filter="letras">
+
+            Letras 3D
+
+          </button>
+
+          <button class="filter-btn" data-filter="otros">
+
+            Otros
+
+          </button>
+
+        </div>
+
+
+
+        <div class="gallery">
+
+
+          <div class="gallery-item reveal" data-category="acrilico">
+
+            <img
+              src="acrilico4jpg.jpg"
+              alt="Letrero acrílico JVC"
+              onerror="this.parentElement.style.display='none';">
+
+            <div class="gallery-overlay">
+
+              <span>Acrílicos</span>
+
+              <h3>Letrero Acrílico</h3>
+
             </div>
 
-            <!-- Bloque Luminosos -->
-            <div class="tarjeta-proyecto">
-                <div class="img-wrapper"><img src="luminoso1jpg.jpg" alt="Luminoso 1"></div>
-                <div class="info-proyecto"><h3>Caja Luminosa</h3><p>Estructura metálica con iluminación LED uniforme.</p></div>
+          </div>
+
+
+
+          <div class="gallery-item reveal" data-category="acrilico">
+
+            <img
+              src="acrilico5jpg.jpg"
+              alt="Trabajo en acrílico"
+              onerror="this.parentElement.style.display='none';">
+
+            <div class="gallery-overlay">
+
+              <span>Acrílicos</span>
+
+              <h3>Diseño Corporativo</h3>
+
             </div>
-            <div class="tarjeta-proyecto">
-                <div class="img-wrapper"><img src="luminoso2jpg.jpg" alt="Luminoso 2"></div>
-                <div class="info-proyecto"><h3>Panel Luminoso Publicitario</h3><p>Ideal para captar clientes en la noche.</p></div>
+
+          </div>
+
+
+
+          <div class="gallery-item reveal" data-category="luminoso">
+
+            <img
+              src="luminoso1.jpg.jpg"
+              alt="Letrero luminoso"
+              onerror="this.parentElement.style.display='none';">
+
+            <div class="gallery-overlay">
+
+              <span>Luminosos</span>
+
+              <h3>Letrero Luminoso</h3>
+
             </div>
-            <div class="tarjeta-proyecto">
-                <div class="img-wrapper"><img src="luminoso3jpg.jpg" alt="Luminoso 3"></div>
+
+          </div>
+
+
+
+          <div class="gallery-item reveal" data-category="luminoso">
+
+            <img
+              src="luminoso2.jpg.jpg"
+              alt="Letrero luminoso JVC"
+              onerror="this.parentElement.style.display='none';">
+
+            <div class="gallery-overlay">
+
+              <span>Luminosos</span>
+
+              <h3>Iluminación Comercial</h3>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="gallery-item reveal" data-category="luminoso">
+
+            <img
+              src="luminoso3.jpg.jpg"
+              alt="Trabajo luminoso"
+              onerror="this.parentElement.style.display='none';">
+
+            <div class="gallery-overlay">
+
+              <span>Luminosos</span>
+
+              <h3>Identidad Comercial</h3>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="gallery-item reveal" data-category="luminoso">
+
+            <img
+              src="luminoso4.jpg.jpg"
+              alt="Letrero luminoso"
+              onerror="this.parentElement.style.display='none';">
+
+            <div class="gallery-overlay">
+
+              <span>Luminosos</span>
+
+              <h3>Proyecto Luminoso</h3>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="gallery-item reveal" data-category="otros">
+
+            <img
+              src="mdf.jpg.jpg"
+              alt="Trabajo personalizado"
+              onerror="this.parentElement.style.display='none';">
+
+            <div class="gallery-overlay">
+
+              <span>Personalizados</span>
+
+              <h3>Trabajo Especial</h3>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CTA
+    ================================================== -->
+
+    <section class="cta">
+
+      <div class="container">
+
+        <div class="cta-box reveal">
+
+          <h2>
+
+            ¿Tienes un proyecto en mente?
+
+          </h2>
+
+          <p>
+
+            Cuéntanos qué necesitas y conversemos sobre
+            la mejor solución para tu negocio.
+
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/51980700597?text=Hola%20Letreros%20JVC,%20quiero%20solicitar%20una%20cotización."
+            target="_blank">
+
+            💬 Solicitar cotización
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         NOSOTROS
+    ================================================== -->
+
+    <section class="section about" id="nosotros">
+
+      <div class="container about-grid">
+
+        <div class="about-content reveal">
+
+          <h2>
+
+            Una imagen profesional empieza por
+
+            <span>un buen letrero.</span>
+
+          </h2>
+
+          <p>
+
+            En Letreros JVC desarrollamos soluciones
+            publicitarias para negocios que quieren
+            destacar y proyectar una imagen profesional.
+
+          </p>
+
+          <p>
+
+            Trabajamos cada proyecto buscando combinar
+            diseño, presencia visual y una fabricación
+            adecuada para las necesidades de cada cliente.
+
+          </p>
+
+
+          <div class="checks">
+
+            <div class="check">
+
+              <div class="check-icon">✓</div>
+
+              <span>Diseños personalizados</span>
+
+            </div>
+
+
+            <div class="check">
+
+              <div class="check-icon">✓</div>
+
+              <span>Atención personalizada</span>
+
+            </div>
+
+
+            <div class="check">
+
+              <div class="check-icon">✓</div>
+
+              <span>Fabricación e instalación</span>
+
+            </div>
+
+
+            <div class="check">
+
+              <div class="check-icon">✓</div>
+
+              <span>Soluciones para negocios</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="about-card reveal">
+
+          <div class="about-card-content">
+
+            <small>LETREROS JVC</small>
+
+            <h3>
+
+              Dale presencia a tu marca.
+
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PROCESO
+    ================================================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-title reveal">
+
+          <span>Cómo trabajamos</span>
+
+          <h2>De la idea a la instalación</h2>
+
+          <p>
+
+            Un proceso sencillo para convertir tu idea
+            en una solución publicitaria.
+
+          </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+
+          <div class="process reveal">
+
+            <div class="process-number">01</div>
+
+            <h3>Cuéntanos tu idea</h3>
+
+            <p>
+
+              Escríbenos por WhatsApp y explícanos
+              qué necesitas para tu negocio.
+
+            </p>
+
+          </div>
+
+
+
+          <div class="process reveal">
+
+            <div class="process-number">02</div>
+
+            <h3>Propuesta</h3>
+
+            <p>
+
+              Evaluamos tu proyecto y planteamos
+              una solución adecuada.
+
+            </p>
+
+          </div>
+
+
+
+          <div class="process reveal">
+
+            <div class="process-number">03</div>
+
+            <h3>Fabricación</h3>
+
+            <p>
+
+              Elaboramos tu proyecto cuidando
+              cada detalle del trabajo.
+
+            </p>
+
+          </div>
+
+
+
+          <div class="process reveal">
+
+            <div class="process-number">04</div>
+
+            <h3>Instalación</h3>
+
+            <p>
+
+              Coordinamos la entrega e instalación
+              de tu proyecto.
+
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         UBICACIÓN
+    ================================================== -->
+
+    <section class="section location" id="ubicacion">
+
+      <div class="container">
+
+        <div class="section-title reveal">
+
+          <span>Visítanos</span>
+
+          <h2>Encuéntranos en Lima</h2>
+
+          <p>
+
+            Estamos ubicados en el Centro de Lima.
+
+          </p>
+
+        </div>
+
+
+        <div class="location-grid">
+
+
+          <div class="location-info reveal">
+
+            <h2>Información de contacto</h2>
+
+
+            <div class="location-item">
+
+              <div class="icon">📍</div>
+
+              <div>
+
+                <strong>Dirección</strong>
+
+                <p>
+
+                  Av. Bolivia 148<br>
+                  C.C. Centro Lima<br>
+                  Stand 272-F, Primer Piso<br>
+                  Lima, Perú
+
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="location-item">
+
+              <div class="icon">💬</div>
+
+              <div>
+
+                <strong>WhatsApp</strong>
+
+                <p>
+
+                  980 700 597
+
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <a
+              class="btn btn-primary"
+              href="https://wa.me/51980700597?text=Hola%20Letreros%20JVC,%20quiero%20hacer%20una%20consulta."
+              target="_blank">
+
+              Escribir por WhatsApp
+
+            </a>
+
+          </div>
+
+
+
+          <div class="map reveal">
+
+            <iframe
+              src="https://www.google.com/maps?q=Av.%20Bolivia%20148,%20Centro%20de%20Lima,%20Peru&output=embed"
+              loading="lazy"
+              allowfullscreen>
+            </iframe>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ===================================================
+       FOOTER
+  ==================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+
+        <div class="footer-brand">
+
+          <img src="logo.png" alt="Letreros JVC">
+
+          <p>
+
+            Letreros, acrílicos, letras 3D y soluciones
+            publicitarias para hacer destacar tu negocio.
+
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h3>Navegación</h3>
+
+          <div class="footer-links">
+
+            <a href="#inicio">Inicio</a>
+
+            <a href="#servicios">Servicios</a>
+
+            <a href="#galeria">Trabajos</a>
+
+            <a href="#nosotros">Nosotros</a>
+
+            <a href="#ubicacion">Ubicación</a>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <h3>Contacto</h3>
+
+          <div class="footer-links">
+
+            <a href="https://wa.me/51980700597" target="_blank">
+
+              WhatsApp: 980 700 597
+
+            </a>
+
+            <a href="#ubicacion">
+
+              Av. Bolivia 148
+
+            </a>
+
+            <a href="#ubicacion">
+
+              Stand 272-F · Primer Piso
+
+            </a>
+
+            <a href="#ubicacion">
+
+              Centro de Lima · Perú
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="copyright">
+
+        © 2026 Letreros JVC · Todos los derechos reservados.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- ===================================================
+       WHATSAPP FLOTANTE
+  ==================================================== -->
+
+  <div class="whatsapp" id="whatsapp">
+
+    <div class="whatsapp-box">
+
+      <h3>👋 ¿Tienes un proyecto?</h3>
+
+      <p>
+
+        Escríbenos y solicita una cotización
+        para tu negocio.
+
+      </p>
+
+      <a
+        class="whatsapp-link"
+        href="https://wa.me/51980700597?text=Hola%20Letreros%20JVC,%20quiero%20cotizar%20un%20trabajo."
+        target="_blank">
+
+        Cotizar por WhatsApp
+
+      </a>
+
+    </div>
+
+
+    <button
+      class="whatsapp-button"
+      id="whatsappButton"
+      aria-label="Abrir WhatsApp">
+
+      ☎
+
+    </button>
+
+  </div>
+
+
+
+  <!-- ===================================================
+       MODAL
+  ==================================================== -->
+
+  <div class="modal" id="imageModal">
+
+    <button
+      class="modal-close"
+      id="modalClose">
+
+      ×
+
+    </button>
+
+    <img id="modalImage" src="" alt="Trabajo Letreros JVC">
+
+  </div>
+
+
+
+  <!-- ===================================================
+       JAVASCRIPT
+  ==================================================== -->
+
+  <script>
+
+
+    /* ================================================
+       WHATSAPP
+    ================================================= */
+
+    const whatsapp =
+      document.getElementById("whatsapp");
+
+    const whatsappButton =
+      document.getElementById("whatsappButton");
+
+
+    whatsappButton.addEventListener("click", function () {
+
+      whatsapp.classList.toggle("open");
+
+    });
+
+
+
+    /* ================================================
+       FILTROS DE GALERÍA
+    ================================================= */
+
+    const filterButtons =
+      document.querySelectorAll(".filter-btn");
+
+    const galleryItems =
+      document.querySelectorAll(".gallery-item");
+
+
+    filterButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn =>
+          btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+
+        const filter =
+          button.getAttribute("data-filter");
+
+
+        galleryItems.forEach(item => {
+
+          const category =
+            item.getAttribute("data-category");
+
+
+          if (
+            filter === "all" ||
+            category === filter
+          ) {
+
+            item.style.display = "block";
+
+          } else {
+
+            item.style.display = "none";
+
+          }
+
+        });
+
+      });
+
+    });
+
+
+
+    /* ================================================
+       MODAL DE IMÁGENES
+    ================================================= */
+
+    const modal =
+      document.getElementById("imageModal");
+
+    const modalImage =
+      document.getElementById("modalImage");
+
+    const modalClose =
+      document.getElementById("modalClose");
+
+
+    galleryItems.forEach(item => {
+
+      const image =
+        item.querySelector("img");
+
+
+      image.addEventListener("click", function () {
+
+        if (!image.src) return;
+
+        modalImage.src = image.src;
+
+        modal.classList.add("active");
+
+      });
+
+    });
+
+
+    modalClose.addEventListener("click", function () {
+
+      modal.classList.remove("active");
+
+    });
+
+
+    modal.addEventListener("click", function (event) {
+
+      if (event.target === modal) {
+
+        modal.classList.remove("active");
+
+      }
+
+    });
+
+
+    document.addEventListener("keydown", function(event) {
+
+      if (event.key === "Escape") {
+
+        modal.classList.remove("active");
+
+      }
+
+    });
+
+
+
+    /* ================================================
+       ANIMACIONES AL HACER SCROLL
+    ================================================= */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const observer =
+      new IntersectionObserver(
+
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: .12
+        }
+
+      );
+
+
+    revealElements.forEach(element => {
+
+      observer.observe(element);
+
+    });
+
+
+  </script>
+
+
+</body>
+</html>
