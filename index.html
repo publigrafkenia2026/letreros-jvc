@@ -1,144 +1,325 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Letreros JVC - Letreros Luminosos Profesionales</title>
+    <title>Letreros JVC | Letreros Luminosos, Acrílicos y Neón en Lima</title>
+    <!-- Google Fonts para estilo moderno y corporativo -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <!-- FontAwesome para los iconos de contacto y WhatsApp -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: #0a0b0d; color: #fff; overflow-x: hidden; }
-        
-        /* NAVBAR CORPORATIVA OPTIMIZADA */
-        header { background: rgba(10, 11, 13, 0.98); position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; border-bottom: 3px solid #c5a059; }
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 5%; max-width: 1300px; margin: auto; }
-        
-        /* LOGO IMPACTANTE MAS GRANDE Y CON MOVIMIENTO */
-        .logo-box { display: flex; align-items: center; gap: 15px; cursor: pointer; }
-        .logo-img { width: 110px; height: auto; transition: 0.3s; animation: neonGlowPremium 2.5s infinite ease-in-out; }
-        .logo-text { font-size: 28px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
-        .logo-text span { color: #c5a059; text-shadow: 0 0 10px rgba(197,160,89,0.5); }
-        
-        @keyframes neonGlowPremium {
-            0%, 100% { filter: drop-shadow(0 0 4px rgba(255, 180, 0, 0.5)); transform: scale(1); }
-            50% { filter: drop-shadow(0 0 25px rgba(255, 180, 0, 0.95)) drop-shadow(0 0 40px rgba(255,180,0,0.6)); transform: scale(1.05); }
+        :root {
+            --primary: #00f0ff;
+            --secondary: #ff007f;
+            --dark: #0a0a12;
+            --card-bg: #121225;
+            --text: #ffffff;
         }
 
-        .nav-menu { display: flex; list-style: none; gap: 25px; align-items: center; }
-        .nav-menu a { color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; transition: 0.3s; text-transform: uppercase; }
-        .nav-menu a:hover, .nav-menu .active-link { color: #c5a059; }
-        .btn-nav-wsap { background-color: #25d366; color: #fff !important; padding: 8px 16px; border-radius: 4px; display: flex; align-items: center; gap: 8px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-        /* HERO AJUSTADO SIN SUPERPOSICION */
-        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; margin-top: 100px; background: linear-gradient(rgba(10,11,13,0.85), rgba(10,11,13,0.95)), url('https://unsplash.com') center/cover; }
-        .hero h1 { font-size: 52px; font-weight: 900; line-height: 1.2; text-transform: uppercase; margin-bottom: 25px; }
-        .hero h1 span { color: #c5a059; text-shadow: 0 0 15px rgba(197,160,89,0.3); }
-        .hero p { font-size: 19px; color: #a0a5b0; max-width: 800px; margin-bottom: 35px; line-height: 1.6; }
-        
-        .btn-premium { background: #c5a059; color: #0a0b0d; padding: 16px 40px; font-size: 16px; font-weight: 700; border: none; border-radius: 4px; cursor: pointer; text-transform: uppercase; transition: 0.3s; box-shadow: 0 4px 15px rgba(197,160,89,0.3); }
-        .btn-premium:hover { background: #e0b86f; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(197,160,89,0.5); }
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            overflow-x: hidden;
+        }
 
-        /* SECCIONES Y CONTENEDORES */
-        .section-container { max-width: 1200px; margin: 80px auto; padding: 0 5%; text-align: center; }
-        .section-title { font-size: 36px; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; position: relative; padding-bottom: 15px; }
-        .section-title::after { content: ''; width: 60px; height: 3px; background: #c5a059; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
-        .section-subtitle { color: #a0a5b0; font-size: 16px; margin-bottom: 50px; }
+        /* BARRA DE NAVEGACIÓN Y LOGO CON MOVIMIENTO */
+        header {
+            background: rgba(10, 10, 18, 0.95);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(0, 240, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
 
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .video-card { background: #14161d; padding: 20px; border-radius: 6px; border: 1px solid #232733; transition: 0.3s; }
-        .video-card:hover { transform: translateY(-5px); border-color: #c5a059; }
-        .video-card iframe { width: 100%; height: 210px; border-radius: 4px; border: none; }
-        .video-card h3 { font-size: 18px; margin-top: 15px; color: #fff; font-weight: 600; }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
 
-        /* UBICACION EN MAPA PROFESIONAL INTEGRADO */
-        .map-wrapper { display: flex; flex-wrap: wrap; gap: 30px; background: #14161d; border-radius: 8px; border: 1px solid #232733; overflow: hidden; text-align: left; }
-        .map-info { flex: 1; min-width: 300px; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
-        .map-info h3 { font-size: 24px; color: #c5a059; margin-bottom: 20px; text-transform: uppercase; }
-        .map-info p { color: #a0a5b0; line-height: 1.8; margin-bottom: 15px; font-size: 16px; }
-        .map-info i { color: #c5a059; margin-right: 10px; width: 20px; }
-        .map-iframe { flex: 1.5; min-width: 300px; height: 400px; }
-        .map-iframe iframe { width: 100%; height: 100%; border: none; }
+        .logo-img {
+            height: 60px;
+            /* Efecto de pulso neón continuo */
+            animation: neonPulse 2s infinite alternate ease-in-out;
+            filter: drop-shadow(0 0 5px var(--primary));
+        }
 
-        /* BOTÓN FLOTANTE INTELIGENTE DE WHATSAPP */
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 32px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); z-index: 100; transition: 0.3s; text-decoration: none; }
-        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
+        @keyframes neonPulse {
+            0% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 5px var(--primary)) contrast(100%);
+            }
+            100% {
+                transform: scale(1.03);
+                filter: drop-shadow(0 0 15px var(--primary)) drop-shadow(0 0 25px var(--secondary)) contrast(120%);
+            }
+        }
 
-        footer { background: #0a0b0d; padding: 30px 5%; text-align: center; border-top: 1px solid #232733; color: #606570; font-size: 14px; }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 400;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+            text-shadow: 0 0 10px var(--primary);
+        }
+
+        /* SECCIÓN HERO (PRINCIPAL) */
+        .hero {
+            padding: 180px 5% 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(10,10,18,0.2) 0%, rgba(10,10,18,1) 100%), url('luminoso1jpg.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+            min-height: 80vh;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 40px;
+            color: #b0b0d0;
+        }
+
+        .btn-principal {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.4);
+            transition: 0.4s;
+        }
+
+        .btn-principal:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 0, 127, 0.7);
+        }
+
+        /* GALERÍA DE PROYECTOS CATEGORIZADA */
+        .seccion {
+            padding: 80px 5%;
+        }
+
+        .titulo-seccion {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .titulo-seccion::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 15px auto 0;
+            box-shadow: 0 0 10px var(--secondary);
+        }
+
+        .grid-proyectos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .tarjeta-proyecto {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.4s;
+        }
+
+        .tarjeta-proyecto:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(0, 240, 255, 0.15);
+        }
+
+        .img-wrapper {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .tarjeta-proyecto:hover .img-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .info-proyecto {
+            padding: 20px;
+        }
+
+        .info-proyecto h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* UBICACIÓN Y CONTACTO */
+        .contacto-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .info-contacto p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            color: #b0b0d0;
+        }
+
+        .info-contacto i {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-right: 15px;
+            width: 30px;
+        }
+
+        .mapa-wrapper {
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid rgba(0, 240, 255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+            height: 350px;
+        }
+
+        /* BOTÓN FLOTANTE DE WHATSAPP */
+        .btn-whatsapp-flotante {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: 0.3s;
+            animation: pulseWa 2s infinite;
+        }
+
+        @keyframes pulseWa {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .btn-whatsapp-flotante:hover {
+            transform: scale(1.1);
+            background-color: #20ba5a;
+        }
+
+        footer {
+            background-color: #05050b;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+            color: #606080;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.3rem; }
+            .contacto-container { grid-template-columns: 1fr; }
+            nav { display: none; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- CABECERA -->
     <header>
-        <div class="navbar">
-            <div class="logo-box" onclick="location.href='#'">
-                <img src="logo.png" alt="Logo JVC" class="logo-img">
-                <span class="logo-text">Letreros <span>JVC</span></span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#" class="active-link">Inicio</a></li>
-                <li><a href="#trabajos">Trabajos</a></li>
-                <li><a href="#contacto">Ubicación</a></li>
-                <li><a href="https://wa.me." class="btn-nav-wsap" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
-            </ul>
+        <div class="logo-container">
+            <img src="logo.png" alt="Letreros JVC" class="logo-img">
         </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#proyectos">Galería</a>
+            <a href="#ubicacion">Ubicación</a>
+        </nav>
     </header>
 
-    <section class="hero">
-        <h1>Fabricación de <br><span>Letreros Luminosos</span> de Alto Impacto</h1>
-        <p>Hacemos brillar la identidad de tu negocio en todo Lima. Diseños corporativos personalizados en Acrílico, MDF y Neón con acabados estructurales de primera calidad y alta durabilidad.</p>
-        <button class="btn-premium" onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'});">Contactar con el Taller</button>
+    <!-- INICIO / HERO -->
+    <section class="hero" id="inicio">
+        <h1>Letreros Luminosos de Alto Impacto que hacen <span>Destacar tu Marca</span></h1>
+        <p>Somos fabricantes directos en Lima. Diseñamos e instalamos letreros acrílicos, letras en MDF, paneles luminosos y neón LED con acabados profesionales y de alta durabilidad.</p>
+        <a href="https://wa.me." class="btn-principal" target="_blank">
+            <i class="fab fa-whatsapp"></i> Cotizar por WhatsApp
+        </a>
     </section>
 
-    <section class="section-container" id="trabajos">
-        <h2 class="section-title">Nuestros Trabajos en Acción</h2>
-        <p class="section-subtitle">Proyectos reales fabricados con precisión industrial para nuestros clientes de Lima.</p>
-        <div class="video-grid">
-            <div class="video-card">
-                <iframe src="https://youtube.com" allowfullscreen></iframe>
-                <h3>Letreros Acrílicos 3D Termoformados</h3>
+    <!-- GALERÍA DE PROYECTOS -->
+    <section class="seccion" id="proyectos">
+        <h2 class="titulo-seccion">Nuestros Trabajos Realizados</h2>
+        <div class="grid-proyectos">
+            
+            <!-- Tarjeta 1: Acrílicos -->
+            <div class="tarjeta-proyecto">
+                <div class="img-wrapper">
+                    <img src="acrilico1jpg.jpg" alt="Letrero Acrílico Corporativo">
+                </div>
+                <div class="info-proyecto">
+                    <h3>Letrero Acrílico 3D</h3>
+                    <p>Acabado elegante en alto relieve con iluminación LED interna para oficinas y fachadas comerciales.</p>
+                </div>
             </div>
-            <div class="video-card">
-                <iframe src="https://youtube.com" allowfullscreen></iframe>
-                <h3>Diseños Corporativos Calados en MDF</h3>
-            </div>
-            <div class="video-card">
-                <iframe src="https://youtube.com" allowfullscreen></iframe>
-                <h3>Instalaciones Modernas en Neón LED</h3>
-            </div>
-            <div class="video-card">
-                <iframe src="https://youtube.com" allowfullscreen></iframe>
-                <h3>Cajas Luminosas Publicitarias</h3>
-            </div>
-        </div>
-    </section>
 
-    <!-- SECCIÓN UBICACIÓN CON MAPA GOOGLE MAPS REAL DE CENTRO LIMA -->
-    <section class="section-container" id="contacto">
-        <h2 class="section-title">Ubicación Estratégica</h2>
-        <p class="section-subtitle">Visítanos en nuestra planta principal en el corazón comercial de Lima Centro.</p>
-        
-        <div class="map-wrapper">
-            <div class="map-info">
-                <h3>Letreros JVC</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Av. Bolivia 148, Stand 272-F<br>Centro Comercial Centro Lima<br>Cercado de Lima, Perú</p>
-                <p><i class="fab fa-whatsapp"></i> 980 700 597</p>
-                <p><i class="fas fa-envelope"></i> ventaspubligrafkenia@gmail.com</p>
-                <p><i class="fas fa-clock"></i> Lunes a Sábado: 9:00 AM - 8:00 PM</p>
-            </div>
-            <div class="map-iframe">
-                <!-- Enlace embebido real de Google Maps apuntando a Av. Bolivia 148 -->
-                <iframe src="https://google.com" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Letreros JVC - Calidad Industrial Directa de Taller. Todos los derechos reservados.</p>
-    </footer>
-
-    <a href="https://wa.me." class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-</body>
-</html>
+            <!-- Tarjeta 2: Luminosos -->
+            <div class="tarjeta-proyecto">
+                <div class="img-wrapper">
+                    <img src="luminoso1jpg.jpg" alt="Caja Luminosa Publicitaria">
+                </div>
+                <div class="info-proyecto">
+                    <h3>Cajas Luminosas</h3>
+                    <p>Máxima visibilidad diurna y nocturna para locales comerciales y marcas de alto flujo.</p>
