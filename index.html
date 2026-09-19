@@ -110,19 +110,28 @@ header{
     border-bottom:1px solid rgba(0,229,255,.12);
 }
 
-.nav{
-    min-height:82px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+.nav {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.logo{
-    width:105px;
-    height:72px;
-    object-fit:contain;
-    filter:drop-shadow(0 0 12px rgba(255,0,128,.35));
-    animation:logoPulse 3.5s ease-in-out infinite;
+.nav__link, .nav a {
+    color: #070912 !important;
+}
+
+.logo {
+    width: auto;
+    height: 100px !important;
+    transition: transform 0.8s ease-in-out;
+    object-fit: contain;
+    filter: drop-shadow(0 0 12px rgba(255,0,128,.35));
+    animation: logoPulse 3.5s ease-in-out infinite;
+}
+
+.logo:hover {
+    transform: rotate(360deg);
 }
 
 @keyframes logoPulse{
